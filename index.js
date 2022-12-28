@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import clientesRoutes from './routes/clientesRoutes.js';
 import productoRoutes from './routes/productoRoutes.js';
+import pedidosRoutes from './routes/pedidosRoutes.js';
 
 // conectar a mongodb
 mongoose.Promise = global.Promise;
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', clientesRoutes);
 app.use('/', productoRoutes);
+app.use('/', pedidosRoutes);
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
